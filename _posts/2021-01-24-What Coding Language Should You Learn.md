@@ -1,7 +1,7 @@
 # What Coding Language Should You Learn?
 
-[image1]: https://github.com/natsci-droid/Udacity_DS_P1_Data_Science_Blog/blob/main/image1.png "Language Popularity"
-[image2]: https://github.com/natsci-droid/Udacity_DS_P1_Data_Science_Blog/blob/main/image2.png "Correlation Matrix"
+[image1]: ../images/image1.png "Language Popularity"
+[image2]: ../images/image2.png "Correlation Matrix"
 
 Stack Overflow has surveyed over 60,000 people, providing the anonomised data for open analysis. Here we look at the different languages people use, including:
 * whether it is common to use the same languages,

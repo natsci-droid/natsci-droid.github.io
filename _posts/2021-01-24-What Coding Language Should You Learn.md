@@ -1,8 +1,8 @@
 # What Coding Language Should You Learn?
 
-[image0]: https://github.com/natsci-droid/Udacity_DS_P1_Data_Science_Blog/blob/main/image0.png "Code illustration"
-[image1]: https://github.com/natsci-droid/Udacity_DS_P1_Data_Science_Blog/blob/main/image1.png "Language Popularity"
-[image2]: https://github.com/natsci-droid/Udacity_DS_P1_Data_Science_Blog/blob/main/image2.png "Correlation Matrix"
+[image0]: ../images/image0.png "Code illustration"
+[image1]: ../images/image1.png "Language Popularity"
+[image2]: ../images/image2.png "Correlation Matrix"
 
 ![Code illustration][image0]
 

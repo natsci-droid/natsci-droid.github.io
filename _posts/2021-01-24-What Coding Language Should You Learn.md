@@ -1,6 +1,6 @@
 # What Coding Language Should You Learn?
 
-[image0]: ../images/image0.png "Code illustration"
+[image0]: ../images/image0.jpg "Code illustration"
 [image1]: ../images/image1.png "Language Popularity"
 [image2]: ../images/image2.png "Correlation Matrix"
 

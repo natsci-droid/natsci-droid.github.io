@@ -44,7 +44,9 @@ There are two data sets provided with this project, a set of dog images and a se
 
 In total, there are 8351 dog images in 133 different breeds. 6680 are used for training, 835 for validation and 836 in the test set. There are 13233 human images to use to train the face detector.
 
-<img src="../images/Brittany_02625.jpg" height="300"> <img src="../images/example_person.png" height="300">
+<p float="left">
+  <img src="../images/Brittany_02625.jpg" height="300"> <img src="../images/example_person.png" height="300">
+</p>
 
 Given that the purpose is to classify dog breeds, it is important to examine the classes of this data set. The bar chart below shows the number of images in each class. Blue is the larger training set and brown the smaller validation data.
 

@@ -77,7 +77,7 @@ The OpenCV face detection algorithm is chosen because it is fully integrated int
 A pre-trained model is used to detect dogs in imagery, using the [ResNet-50 model](http://ethereon.github.io/netscope/#/gist/db945b393d40bfa26006) trained on [ImageNet](http://www.image-net.org/). 
 
 #### Data Preprocessing
-Data required preprocessing before it can be passed to the pre-trained model. The steps are:
+Data required preprocessing before it can be passed to the pre-trained model. The steps are:  
 1) Load image and convert to 3D tensor with dimensions 224 x 224 x 3. The first two dimensions are the spatial pixels of the image and the third is the number of chanels for a colour image.  
 2) Convert to 4D tensor. The model expects a 4D tensor, where the first dimension is the batch number. For single images, this is achieved with a shape of 1 x 224 x 224 x 3.  
 3) The channels are then converted from RGB to BGR using Keras' preprocess_input function in the keras.applications.resnet50 library.  

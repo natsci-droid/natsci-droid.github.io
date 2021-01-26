@@ -101,21 +101,15 @@ _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
 conv2d_1 (Conv2D)            (None, 222, 222, 32)      896       
-_________________________________________________________________
 max_pooling2d_2 (MaxPooling2 (None, 111, 111, 32)      0         
-_________________________________________________________________
 dropout_1 (Dropout)          (None, 111, 111, 32)      0         
-_________________________________________________________________
 conv2d_2 (Conv2D)            (None, 109, 109, 64)      18496     
-_________________________________________________________________
 max_pooling2d_3 (MaxPooling2 (None, 54, 54, 64)        0         
-_________________________________________________________________
 global_average_pooling2d_1 ( (None, 64)                0         
-_________________________________________________________________
 dense_1 (Dense)              (None, 133)               8645      
 =================================================================
-Total params: 28,037,
-Trainable params: 28,037,
+Total params: 28,037  
+Trainable params: 28,037  
 Non-trainable params: 0
 
 A few different architectures were tried and the best selected based on the validation score. Two convoltional layers were found to achieve higher validation accuracy than three, in addition to training faster. Max pooling layers are used after each convolutional layer since these reduce the number of parameters needed to be learnt and abstract the information in the previous layer.

@@ -29,10 +29,10 @@ The data used are provided by Udacity, under the [Data Science Nanodegree](https
 
 
 ## Problem Statement
-The goal is to build an algorithm that takes an image path, identifies whether a human or a dog is present, then classifies that image by dog breed. Three steps are required:
-1) Determine if a human face is present
-2) Determine if a dog is present
-3) Classify the breed in the image
+The goal is to build an algorithm that takes an image path, identifies whether a human or a dog is present, then classifies that image by dog breed. Three steps are required:  
+1) Determine if a human face is present  
+2) Determine if a dog is present  
+3) Classify the breed in the image  
 
 A separate classifier is required for each step, trained for the specific purpose, then must be combined for the overall app.
 
@@ -78,10 +78,10 @@ A pre-trained model is used to detect dogs in imagery, using the [ResNet-50 mode
 
 #### Data Preprocessing
 Data required preprocessing before it can be passed to the pre-trained model. The steps are:
-1) Load image and convert to 3D tensor with dimensions 224 x 224 x 3. The first two dimensions are the spatial pixels of the image and the third is the number of chanels for a colour image.
-2) Convert to 4D tensor. The model expects a 4D tensor, where the first dimension is the batch number. For single images, this is achieved with a shape of 1 x 224 x 224 x 3. 
-3) The channels are then converted from RGB to BGR using Keras' preprocess_input function in the keras.applications.resnet50 library
-4) The same preprocess_input function also normalises the images by subtracting the mean from every pixel in each image
+1) Load image and convert to 3D tensor with dimensions 224 x 224 x 3. The first two dimensions are the spatial pixels of the image and the third is the number of chanels for a colour image.  
+2) Convert to 4D tensor. The model expects a 4D tensor, where the first dimension is the batch number. For single images, this is achieved with a shape of 1 x 224 x 224 x 3.  
+3) The channels are then converted from RGB to BGR using Keras' preprocess_input function in the keras.applications.resnet50 library.  
+4) The same preprocess_input function also normalises the images by subtracting the mean from every pixel in each image.  
 
 #### Implementation
 With the model and pre-trained weights loaded, only the predict function need be called to classify the images. This returns a class label, many of which are dog classes. Labels 268 to 11 of ImageNet are dog classes, so if any of these are returned, a dog is detected. A wrap around function tests these classes and returns True if one is present.
@@ -185,7 +185,7 @@ Person resembles a Dachshund
 <img src="../images/sample_images/Person4.jpg"  width="400"> 
 
 No face detected. Please make sure face is clear or try another image.  
-<img src="../images/main/sample_images/Cat.jpg"  width="400">  
+<img src="../images/sample_images/Cat.jpg"  width="400">  
   
 The algorithm correctly identifies dogs and people. No dog or person is incorrectly detected in the cat picture. Breeds resemble the labeled breed, but without knowledge of the actual breed it is difficult to accurately assess. The yellow labrador is classified as a golden labrador, which is very close, and the dashund is correctly classified. People are identified as a greyhound for 3 out of 4 images, despite few similarities. This could potentially be improved if more people are used in the pre-training.
 
@@ -194,7 +194,7 @@ The model would likely need more data to train to higher accuracy, especialy to 
 There may also be mixed breeds, which could confuse the model.
 
 ## Reflection
-The final algorithm can be summarised as:
+The final algorithm can be summarised as:  
 1) Determine if a dog is present  
     1a) Preprocess by converting to 4D tensor, switching channels to BGR and normalising  
     1b) Feed into ResNet50 pretrained model to detect dog  
@@ -209,18 +209,18 @@ The final algorithm can be summarised as:
     If person: return breed resembles  
     If neither: return error message  
 
-Overall, this project was achieved by:
-1) Identifying a relevant problem
-2) Importing and analysing the data
-3) Splitting the problem into separate problems
-4) Considering existing implementations where appropriate
-5) Testing suitability of existing implementations
-6) Training the bespoke dog breed clssifier from scratch
-7) Adapting to use transfer earning to improve the results
-8) Experimenting with different architectures and parameters to tune models
-9) Combining the best models into the final algorithm as detailed above
-10) Testing on new data
-11) Evaluating project and contemplating possible improvements
+Overall, this project was achieved by:  
+1) Identifying a relevant problem  
+2) Importing and analysing the data  
+3) Splitting the problem into separate problems  
+4) Considering existing implementations where appropriate  
+5) Testing suitability of existing implementations  
+6) Training the bespoke dog breed clssifier from scratch  
+7) Adapting to use transfer earning to improve the results  
+8) Experimenting with different architectures and parameters to tune models  
+9) Combining the best models into the final algorithm as detailed above  
+10) Testing on new data  
+11) Evaluating project and contemplating possible improvements  
 
 Unfortunately it was not possible to compare results from Xception due to the provided trained weights being larger than the workspace provided. Uploaded files took longer than training the models, which was a major frustration, but was still faster than training models from scatch.
 

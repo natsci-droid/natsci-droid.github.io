@@ -27,6 +27,7 @@ The data used are provided by Udacity, under the [Data Science Nanodegree](https
 * human images data set, provided by Udacity
 * [ImageNet](http://www.image-net.org/), a heierarchical image database consisting of hundreds of images for each class of thousands of classes, thus very popular for training Convolutional Neural Networks.
 
+The github repository for the code can be found [here](https://github.com/natsci-droid/Udacity_DS_Capstone_Dog_Breed_Classifier)
 
 ## Problem Statement
 The goal is to build an algorithm that takes an image path, identifies whether a human or a dog is present, then classifies that image by dog breed. Three steps are required:  
@@ -36,8 +37,20 @@ The goal is to build an algorithm that takes an image path, identifies whether a
 
 A separate classifier is required for each step, trained for the specific purpose, then must be combined for the overall app.
 
+The human face feature detection will use Haar feature-based cascade classifiers, originally implemented by [Viola and Jones](https://link.springer.com/article/10.1023/B:VISI.0000013087.49260.fb) in 2001. It is ideal for this task because it detects faces with high accuracy whilst processing images quickly.
+
+The dog detection will use the ResNet50 Convolutional Neural Network trained on ImageNet. ResNet50 is a very deep neural network that benefits from residual learning to overcome the difficulty of training such deep layers. Because it achieved first place in the ILSVRC 2015 classification task, which includes classification of dogs, it is well suited to this task. More detail can be found in the [technical report]()https://arxiv.org/abs/1512.03385.
+
+Finally, the breed classification must be trained to the specific data because no existing model exists with all the classes. Additionally, any model benefits from fine tuning on representative data and there may be aspects of this data that are unique. For example, pictures are more likely to be taken by the general public rather than professional photograpers with professional equipment.
+
+Although a classifer can be trained from scratch, this is not the best approach. The data set is small by machine learning standards, so does not provide enough data to adequately learn. Transfer learning can use models already trained on larger datasets, even if the classes are different. The lower level features, such as lines and corners are learned in the lower levels of the network and can be reused. Additional layers added on top of the pretrained model permit fine tuning to the desired classes. Two models are investigated and compared: [VGG16](https://arxiv.org/abs/1409.1556) and [InceptionV3](https://arxiv.org/abs/1512.00567). Both of these are popular high performing convolutional neural networks ideal for image classification tasks.
+
 ## Metrics
 The model performance will be measured by calculating the accuracy on test data, which has been witheld from the training and validation process.
+
+Accuracy is the most popular classification metric, though can mask detail in the results. For example, if there is a very large class imbalance, the accuracy of the smaller clas can be hidden by the accuracy of the larger. This can be illustrated by two classes, where one comprises 90% of the data. If a model always predicted the largest class, it would achieve 90%, despite knowing nothing to distinguish the classes.
+
+There is not such a large class imbalance here, but results for different classes have been exained with a confusion matrix. This highlights where classes have been confused, ost likely because they appear similar, but gives a good indication where to colect more data.
 
 ## Data Exploration
 There are two data sets provided with this project, a set of dog images and a set of human images. Below are example images from this data set.
@@ -149,6 +162,10 @@ When trained using the pre-trained InceptionV3 model, a classification accuracy 
 ![Training][image5]
 
 Thus InceptionV3 is more suitable for this task. This model likely performs better than VGG16 becasue of the differing arhitectures. InceptionV3 implements multi-level feature extraction, which uses different sized kernels for convlutional within the same layer, then concatenates the results.
+
+The confusion matrix shows that the classifier distinguishes between most breeds, indicated by the bright diagonal, but some are confused. There are some bright spots indicating confusion between some classes. In particular, 5 Yorkshire Terriers are misclassified as Silky Terriers.
+
+<img src="../images/cm.png"  width="400">
 
 ### Dog Classification app
 

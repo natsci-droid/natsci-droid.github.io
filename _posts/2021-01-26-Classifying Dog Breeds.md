@@ -155,9 +155,9 @@ The dog detector was also validated against the same 100 sample human images and
 ### 3) Dog Breed Classifier
 When trained from scratch the CNN achieves a classification accuracy of 1.1%.
 
-When trained using the pre-trained VGG model, a classification accuracy of 42.1% is achieved.
+When trained using the pre-trained VGG model, a classification accuracy of 42.7% is achieved.
 
-When trained using the pre-trained InceptionV3 model, a classification accuracy of 78.3% is achieved. The performance throughout training is shown below, with no real increase in the validation accuracy for more than 20 epochs.
+When trained using the pre-trained InceptionV3 model, a classification accuracy of 79.7% is achieved. The performance throughout training is shown below, with no real increase in the validation accuracy for more than 20 epochs.
 
 ![Training][image5]
 
@@ -171,10 +171,10 @@ The confusion matrix shows that the classifier distinguishes between most breeds
 
 Examples of the final algorithm incorporating all of the tasks are shown below. These are obtained from Unsplash or private images.
 
-Dog is a Dachshund  
+Dog is a Manchester terrier  
 <img src="../images/sample_images/Dog1.jpg"  width="400">
 
-Dog is an American eskimo dog  
+Dog is an Icelandic sheepdog  
 <img src="../images/sample_images/Dog2.jpg"  width="400"> 
 
 Dog is a Border collie  
@@ -183,22 +183,22 @@ Dog is a Border collie
 Dog is a Golden retriever  
 <img src="../images/sample_images/Dog4.jpg"  width="400"> 
 
-Person resembles a Greyhound  
+Person resembles a Basenji  
 <img src="../images/sample_images/Person1.jpg"  width="400"> 
 
-Person resembles a Greyhound  
+Person resembles a Bull terrier  
 <img src="../images/sample_images/Person2.jpg"  width="400"> 
 
-Person resembles a Greyhound  
+Person resembles a Bull terrier  
 <img src="../images/sample_images/Person3.jpg"  width="400"> 
 
-Person resembles a Dachshund  
+Person resembles a German shorthaired pointer  
 <img src="../images/sample_images/Person4.jpg"  width="400"> 
 
 No face detected. Please make sure face is clear or try another image.  
 <img src="../images/sample_images/Cat.jpg"  width="400">  
   
-The algorithm correctly identifies dogs and people. No dog or person is incorrectly detected in the cat picture. Breeds resemble the labeled breed, but without knowledge of the actual breed it is difficult to accurately assess. The yellow labrador is classified as a golden labrador, which is very close, and the dashund is correctly classified. People are identified as a greyhound for 3 out of 4 images, despite few similarities. This could potentially be improved if more people are used in the pre-training.
+The algorithm correctly identifies dogs and people. No dog or person is incorrectly detected in the cat picture. Breeds resemble the labeled breed, but without knowledge of the actual breed it is difficult to accurately assess. The yellow labrador is classified as a golden labrador, which is very close, and the dashund is incorrectly classified as a Manchester terrier.
 
 The model would likely need more data to train to higher accuracy, especialy to distinguish between similar breeds.
 
